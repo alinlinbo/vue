@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-pre</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p v-pre>{{message}}</p>
+    <p>{{message}}</p>
+</div>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data:{
+            message: '你好哟！'
+        },
+        methods:{
+
+        }
+    })
+</script>
+</body>
+</html>

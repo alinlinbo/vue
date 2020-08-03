@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-once的使用</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{message}}</p>
+    <!--使用v-once后变量值不会改变-->
+    <p v-once>{{message}}</p>
+</div>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data:{
+            message: '你好哟！'
+        },
+        methods:{
+
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-html</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <h2 v-html="url"></h2>
+</div>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data:{
+            message: '你好哟！',
+            url:'<a href="https://www.bilibili.com/video/BV15741177Eh?p=13">跟着老师学vue</a>'
+        },
+        methods:{
+
+        }
+    })
+</script>
+</body>
+</html>

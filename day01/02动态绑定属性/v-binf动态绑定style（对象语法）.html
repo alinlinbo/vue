@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bing动态绑定style（对象语法）</title>
+    <script src="../../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--<p :style="{backgroundColor:backgroundColor}">{{message}}</p>-->
+    <p :style="{backgroundColor:backgroundColor}">{{message}}</p>
+
+</div>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data:{
+            message: '你好哟！',
+            backgroundColor:'red'
+        },
+        methods:{
+            getBackgroundColor:function () {
+                return {backgroundColor:this.backgroundColor}
+            }
+
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插值的操作</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{message +'山'+ name}}</p>
+    <p>{{counter * 2}}</p>
+</div>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data:{
+            message: '你好哟！',
+            name: '大王',
+            counter: 100
+        },
+        methods:{
+
+        }
+    })
+</script>
+</body>
+</html>

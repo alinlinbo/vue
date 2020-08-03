@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<!--新建一个hello模板编写<vue hello>会直接显示如下代码-->
+<div id="app">{{message}}</div>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data:{
+            message: '你好哟！'
+        },
+        methods:{
+
+        }
+    })
+</script>
+</body>
+</html>
