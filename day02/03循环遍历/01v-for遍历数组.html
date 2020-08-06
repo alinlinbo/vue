@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for遍历数组</title>
+    <script src="../../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <!--没有下标-->
+        <li v-for="item in movie">{{item}}</li>
+        <!--有下标-->
+        <li v-for="(item,index) in movie">{{index}}-{{item}}</li>
+    </ul>
+</div>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data:{
+            message: '你好哟！',
+            movie:['无间道','钢之炼金术师','东成西就','东邪西毒'],
+        },
+        methods:{
+
+        }
+    })
+</script>
+</body>
+</html>

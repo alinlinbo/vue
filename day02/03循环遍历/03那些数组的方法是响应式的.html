@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>哪些数组的方法是响应式的</title>
+    <script src="../../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="item in movie">{{item}}</li>
+    </ul>
+    <button @click="btnClick()">点击</button>
+</div>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data:{
+            message: '你好哟！',
+            movie:['无间道','钢之炼金术师','东成西就','东邪西毒'],
+        },
+        methods:{
+            btnClick() {
+                /*1、pusu()-向数组后面添加元素，可多个*/
+                //this.movie.push('命运石之门');
+                /*2、pop()-删除最后一个元素*/
+                //this.movie.pop()
+                /*3、shift()-删除第一个元素*/
+                //this.movie.shift()
+                /*4、向数组的开头添加元素*/
+                //this.movie.unshift('爱丽丝梦游仙境','楚门')
+                /*5、splice(1,1,'')-删除，替换，插入元素*/
+                //this.movie.splice(1,1,'方世玉')
+                //通过索引修改数组中的元素不会响应式
+                //this.movie[0] = '整蛊专家'
+                this.movie.splice(0,0,'整蛊专家')
+
+            }
+
+        }
+    })
+</script>
+</body>
+</html>

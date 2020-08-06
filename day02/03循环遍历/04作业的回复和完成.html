@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for和v-bing结合的作业</title>
+    <script src="../../js/vue.js"></script>
+    <style>
+        .active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(m,index) in movies"
+            :class="{active: currentIndex === index}"
+            @click="changeClass(index)">
+            {{index}}{{m}}
+        </li>
+    </ul>
+</div>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data:{
+            movies:['一条狗的使命','方谬神探','大话西游','请回答1988'],
+            currentIndex:0,
+        },
+        methods:{
+            changeClass(index){
+                this.currentIndex = index;
+            }
+        }
+    })
+</script>
+</body>
+</html>

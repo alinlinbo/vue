@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-model结合radio</title>
+    <script src="../../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="radio" id="male" value="男" v-model="sex"><label for="male">男</label>
+    <input type="radio" id="female" value="女" v-model="sex"><label for="female">女</label>
+<p>{{sex}}</p>
+</div>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data:{
+            message: '你好哟！',
+            sex: '男'
+        },
+        methods:{
+
+        }
+    })
+</script>
+</body>
+</html>

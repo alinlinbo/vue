@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-on的修饰符使用</title>
+    <script src="../../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--v-on.shop:阻止冒泡-->
+    <div @click="divClick()">
+        abcd
+        <button @click.stop="btnClick()">阻止冒泡</button>
+        <!--阻止默认行为-->
+    </div>
+    <form action="参数传递问题.html">
+        <input type="submit" value="提交" @click.prevent="btnClick">
+    </form>
+    <!--监听键帽的点击-->
+    <input type="text" @keyup.enter="onEnter()">
+    <br/>
+    <!--点击回调只触发一次-->
+    <button @click.once="btnClick" >只出发一次</button>
+</div>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data:{
+            message: '你好哟！'
+        },
+        methods:{
+            divClick(){
+                console.log('divClick');
+            },
+            btnClick(){
+                console.log('btnClick')
+            },
+            onEnter(){
+                console.log('keyup')
+            }
+        }
+    })
+</script>
+</body>
+</html>
