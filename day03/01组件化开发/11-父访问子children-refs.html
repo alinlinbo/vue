@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>children-refs</title>
+    <script src="../../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <cpn ref="aaa"></cpn>
+    <button @click="showChild()">点击</button>
+</div>
+<template id="cpn">
+<div>我是自住兼</div>
+</template>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data:{
+            message: '你好哟！'
+        },
+        methods:{
+            showChild(){
+                this.$children[0].showMessage();
+                this.$refs.aaa.showMessage();
+            }
+
+        },
+        components:{
+            cpn:{
+                template: "#cpn",
+                methods: {
+                    showMessage(){
+                        console.log('秀我')
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

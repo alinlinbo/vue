@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父子组件结合双向绑定</title>
+    <script src="../../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{message}}
+    <cpn :number1="num1" :number2="num2" @num1-change="num1Change"></cpn>
+
+</div>
+<template id="cpn">
+    <div>
+        <h1>{{number1}}</h1>
+        <h1>data:{{dnumber1}}</h1>
+        <input :value="dnumber1" @input="num1Input">
+        <h1>{{number2}}</h1>
+        <h1>data:{{dnumber2}}</h1>
+    </div>
+</template>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data:{
+            message: '你好哟！',
+            num1: 0,
+            num2: 1,
+        },
+        methods:{
+            num1Change(value){
+
+                this.num1 = value;
+            }
+
+
+        },
+        components:{
+            cpn: {
+                template: "#cpn",
+                props:{
+                    number1:Number,
+                    number2:Number,
+                },
+                data(){
+                    return{
+                        dnumber1 : this.number1,
+                        dnumber2 : this.number2
+                    }
+                },
+                methods: {
+                    num1Input(event){
+                        this.dnumber1 = event.target.value;
+                        this.$emit('num1-change',this.dnumber1)
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

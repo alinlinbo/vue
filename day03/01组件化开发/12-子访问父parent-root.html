@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子访问父parent-root</title>
+    <script src="../../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <cpn ref="aaa"></cpn>
+</div>
+<template id="cpn">
+    <div>
+        <h1>我是子组件</h1>
+        <ccpn></ccpn>
+    </div>
+</template>
+<template id="ccpn">
+    <div>
+        <h1>我是子组件的子组件</h1>
+        <button @click="showParent()">点击</button>
+    </div>
+</template>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data:{
+            message: '你好哟！'
+        },
+        methods:{
+        },
+        components:{
+            cpn:{
+                template: "#cpn",
+
+                components: {
+                    ccpn:{
+                        template: "#ccpn",
+                        methods: {
+                            showParent(){
+                                console.log(this.$parent);
+                                console.log(this.$root)
+                            }
+                        },
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
