@@ -1,4 +1,5 @@
 import {INCREMENT} from "./mutations-types";
+import Vue from 'vue'
 
 export default {
   // 方法
@@ -25,10 +26,10 @@ export default {
 
     // state.info['address'] = '洛杉矶'
 
-    // Vue.set(state.info, 'address', '洛杉矶')
+    //Vue.set(state.info, 'address', '洛杉矶')
     // 该方式做不到响应式
 
     // delete state.info.age
-    // Vue.delete(state.info, 'age')
+     Vue.delete(state.info, 'age')
   }
 }
